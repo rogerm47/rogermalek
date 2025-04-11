@@ -19,90 +19,90 @@
             --ruby: #e84393;
             --sapphire: #0984e3;
         }
-
+        
         body {
             background: linear-gradient(135deg, var(--deep-charcoal) 0%, #1a1a2e 100%);
             color: #f8f9fa;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
         }
-
+        
         .gradient-text {
             background: linear-gradient(90deg, var(--electric-blue), var(--soft-purple));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-
+        
         .primary-gradient {
             background: linear-gradient(135deg, var(--dark-purple), var(--sapphire));
         }
-
+        
         .card {
             background: rgba(25, 25, 35, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
         }
-
+        
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 240, 255, 0.1);
             border: 1px solid rgba(0, 240, 255, 0.2);
         }
-
+        
         .glow {
             box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
         }
-
+        
         .btn-primary {
             background: linear-gradient(90deg, var(--soft-purple), var(--sapphire));
             transition: all 0.3s ease;
         }
-
+        
         .btn-primary:hover {
             background: linear-gradient(90deg, var(--sapphire), var(--soft-purple));
             box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
         }
-
+        
         .pricing-card {
             background: linear-gradient(135deg, rgba(25, 25, 35, 0.9), rgba(42, 42, 64, 0.9));
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
         }
-
+        
         .pricing-card:hover {
             transform: scale(1.03);
             border: 1px solid var(--electric-blue);
             box-shadow: 0 10px 25px rgba(0, 240, 255, 0.2);
         }
-
+        
         .feature-icon {
             background: linear-gradient(135deg, var(--sapphire), var(--soft-purple));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-
+        
         input, textarea {
             background: rgba(25, 25, 35, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: white;
             transition: all 0.3s ease;
         }
-
+        
         input:focus, textarea:focus {
             border-color: var(--electric-blue);
             box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.2);
             outline: none;
         }
-
+        
         .nav-link {
             position: relative;
             color: rgba(255, 255, 255, 0.7);
             transition: color 0.3s ease;
         }
-
+        
         .nav-link::after {
             content: '';
             position: absolute;
@@ -113,11 +113,11 @@
             background: linear-gradient(90deg, var(--electric-blue), var(--soft-purple));
             transition: width 0.3s ease;
         }
-
+        
         .nav-link:hover {
             color: white;
         }
-
+        
         .nav-link:hover::after {
             width: 100%;
         }
@@ -126,7 +126,7 @@
             border-left: 3px solid var(--electric-blue);
             transition: all 0.3s ease;
         }
-
+        
         .benefit-card:hover {
             background: rgba(0, 240, 255, 0.05);
         }
@@ -141,7 +141,7 @@
             overflow: hidden;
             z-index: -1;
         }
-
+        
         .bg-particle {
             position: absolute;
             opacity: 0.1;
@@ -149,7 +149,19 @@
             background: linear-gradient(90deg, var(--electric-blue), var(--soft-purple));
             animation: float 15s infinite ease-in-out;
         }
-
+        
+        .qr-code {
+            border: 2px solid var(--electric-blue);
+            padding: 10px;
+            background: rgba(25, 25, 35, 0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .qr-code:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+        
         @keyframes float {
             0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.1; }
             50% { transform: translateY(-20px) translateX(20px) rotate(180deg); opacity: 0.2; }
@@ -236,7 +248,7 @@
                         Custom n8n workflow design that connects your tools and processes into seamless, automated systems.
                     </p>
                 </div>
-
+                
                 <div class="card rounded-xl p-8">
                     <div class="text-5xl feature-icon mb-6">
                         <i class="fas fa-plug"></i>
@@ -246,7 +258,7 @@
                         Connect any system with an API into your automated workflows, even your custom in-house tools.
                     </p>
                 </div>
-
+                
                 <div class="card rounded-xl p-8">
                     <div class="text-5xl feature-icon mb-6">
                         <i class="fas fa-code"></i>
@@ -256,7 +268,7 @@
                         Extend n8n capabilities with custom code nodes when needed for specialized automation tasks.
                     </p>
                 </div>
-
+                
                 <div class="card rounded-xl p-8">
                     <div class="text-5xl feature-icon mb-6">
                         <i class="fas fa-server"></i>
@@ -266,7 +278,7 @@
                         Secure, on-premise installation and configuration of n8n for maximum data privacy and control.
                     </p>
                 </div>
-
+                
                 <div class="card rounded-xl p-8">
                     <div class="text-5xl feature-icon mb-6">
                         <i class="fas fa-brain"></i>
@@ -276,7 +288,7 @@
                         Integrate AI capabilities into your workflows to process data, generate content, and make decisions.
                     </p>
                 </div>
-
+                
                 <div class="card rounded-xl p-8">
                     <div class="text-5xl feature-icon mb-6">
                         <i class="fas fa-graduation-cap"></i>
@@ -299,7 +311,7 @@
             <p class="text-xl text-center text-gray-300 max-w-3xl mx-auto mb-16">
                 Discover how n8n automation transforms your business operations and delivers measurable ROI.
             </p>
-
+            
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Benefit 1 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
@@ -311,7 +323,7 @@
                     </div>
                     <p class="text-gray-300">Save 5-10 hours weekly by automating manual data entry tasks between systems.</p>
                 </div>
-
+                
                 <!-- Benefit 2 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                     <div class="flex items-start mb-3">
@@ -322,7 +334,7 @@
                     </div>
                     <p class="text-gray-300">Automate email responses and sorting, saving 3-4 hours per week per employee.</p>
                 </div>
-
+                
                 <!-- Benefit 3 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                     <div class="flex items-start mb-3">
@@ -333,7 +345,7 @@
                     </div>
                     <p class="text-gray-300">Reduce invoice processing costs by 80% and time by 90% with automated workflows.</p>
                 </div>
-
+                
                 <!-- Benefit 4 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                     <div class="flex items-start mb-3">
@@ -344,7 +356,7 @@
                     </div>
                     <p class="text-gray-300">Eliminate back-and-forth emails with automated scheduling, saving 2-3 hours weekly.</p>
                 </div>
-
+                
                 <!-- Benefit 5 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                     <div class="flex items-start mb-3">
@@ -355,7 +367,7 @@
                     </div>
                     <p class="text-gray-300">Automate data collection and report creation, saving 4-8 hours per reporting cycle.</p>
                 </div>
-
+                
                 <!-- Benefit 6 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                     <div class="flex items-start mb-3">
@@ -366,7 +378,7 @@
                     </div>
                     <p class="text-gray-300">Streamline customer setup process, reducing onboarding time by 70%.</p>
                 </div>
-
+                
                 <!-- Benefit 7 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                     <div class="flex items-start mb-3">
@@ -377,7 +389,7 @@
                     </div>
                     <p class="text-gray-300">Automate task creation, updates, and notifications, saving 5+ hours weekly per project.</p>
                 </div>
-
+                
                 <!-- Benefit 8 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                     <div class="flex items-start mb-3">
@@ -388,7 +400,7 @@
                     </div>
                     <p class="text-gray-300">Keep systems in sync automatically, eliminating data discrepancies and saving 3+ hours weekly.</p>
                 </div>
-
+                
                 <!-- Benefit 9 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                     <div class="flex items-start mb-3">
@@ -399,7 +411,7 @@
                     </div>
                     <p class="text-gray-300">Schedule and post content automatically across platforms, saving 5-7 hours weekly.</p>
                 </div>
-
+                
                 <!-- Benefit 10 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                     <div class="flex items-start mb-3">
@@ -410,7 +422,7 @@
                     </div>
                     <p class="text-gray-300">Automate ticket routing and initial responses, reducing resolution time by 40%.</p>
                 </div>
-
+                
                 <!-- Benefit 11 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                     <div class="flex items-start mb-3">
@@ -421,7 +433,7 @@
                     </div>
                     <p class="text-gray-300">Automate contract creation, approvals, and renewals, saving 10+ hours per contract.</p>
                 </div>
-
+                
                 <!-- Benefit 12 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                     <div class="flex items-start mb-3">
@@ -432,7 +444,7 @@
                     </div>
                     <p class="text-gray-300">Reduce order processing time by 80% with automated workflows from order to fulfillment.</p>
                 </div>
-
+                
                 <!-- Benefit 13 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                     <div class="flex items-start mb-3">
@@ -443,7 +455,7 @@
                     </div>
                     <p class="text-gray-300">Streamline new hire setup process, reducing HR time spent by 60% per employee.</p>
                 </div>
-
+                
                 <!-- Benefit 14 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                     <div class="flex items-start mb-3">
@@ -454,7 +466,7 @@
                     </div>
                     <p class="text-gray-300">Reduce approval cycle times by 70% with automated routing and notifications.</p>
                 </div>
-
+                
                 <!-- Benefit 15 -->
                 <div class="benefit-card bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                     <div class="flex items-start mb-3">
@@ -475,7 +487,7 @@
             <h2 class="text-4xl font-bold text-center mb-16">
                 <span class="gradient-text">Problems Automation Solves</span>
             </h2>
-
+            
             <div class="grid md:grid-cols-2 gap-20 items-center">
                 <div>
                     <div class="mb-10">
@@ -489,7 +501,7 @@
                             <p>Automation reduces errors by 95% and saves 15+ hours weekly</p>
                         </div>
                     </div>
-
+                    
                     <div class="mb-10">
                         <h3 class="text-2xl font-bold mb-4 flex items-center">
                             <i class="fas fa-exclamation-circle text-red-400 mr-3"></i>
@@ -501,7 +513,7 @@
                             <p>Automated notifications and updates save 12+ hours weekly</p>
                         </div>
                     </div>
-
+                    
                     <div>
                         <h3 class="text-2xl font-bold mb-4 flex items-center">
                             <i class="fas fa-exclamation-circle text-red-400 mr-3"></i>
@@ -514,7 +526,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div>
                     <div class="card primary-gradient rounded-xl p-10 text-center">
                         <h3 class="text-3xl font-bold mb-6">Total Time Saved</h3>
@@ -557,7 +569,7 @@
             <p class="text-xl text-center text-gray-300 max-w-3xl mx-auto mb-16">
                 Choose the plan that fits your automation needs and scale as your business grows.
             </p>
-
+            
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Basic Plan -->
                 <div class="pricing-card rounded-xl p-8 flex flex-col">
@@ -592,7 +604,7 @@
                         Get Started
                     </a>
                 </div>
-
+                
                 <!-- Pro Plan -->
                 <div class="pricing-card rounded-xl p-8 relative transform scale-105 flex flex-col">
                     <div class="absolute top-0 right-0 bg-soft-purple text-white text-sm font-bold py-1 px-3 rounded-bl-lg rounded-tr-lg">
@@ -633,7 +645,7 @@
                         Get Started
                     </a>
                 </div>
-
+                
                 <!-- Enterprise Plan -->
                 <div class="pricing-card rounded-xl p-8 flex flex-col">
                     <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
@@ -648,7 +660,7 @@
                         </li>
                         <li class="flex items-start mb-4">
                             <i class="fas fa-check-circle text-emerald mt-1 mr-3"></i>
-                            <span>Unlimited executions</span>
+                            <span>Unlimited workflow executions</span>
                         </li>
                         <li class="flex items-start mb-4">
                             <i class="fas fa-check-circle text-emerald mt-1 mr-3"></i>
@@ -688,62 +700,74 @@
             <p class="text-xl text-center text-gray-300 max-w-3xl mx-auto mb-16">
                 Ready to supercharge your business with automation? Let's discuss your specific needs.
             </p>
-
-            <div class="max-w-3xl mx-auto">
-                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="card rounded-xl p-8">
-                    <input type="hidden" name="form-name" value="contact" />
-                    <div class="hidden">
-                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label for="name" class="block text-gray-300 mb-2">Name</label>
-                            <input type="text" id="name" name="name" class="w-full py-3 px-4 rounded-lg" required>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-10">
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="card rounded-xl p-8">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <div class="hidden">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                         </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-300 mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="w-full py-3 px-4 rounded-lg" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-300 mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="w-full py-3 px-4 rounded-lg" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="company" class="block text-gray-300 mb-2">Company</label>
+                            <input type="text" id="company" name="company" class="w-full py-3 px-4 rounded-lg">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="package" class="block text-gray-300 mb-2">Package Interest</label>
+                            <select id="package" name="package" class="w-full py-3 px-4 rounded-lg bg-gray-800 border border-gray-700">
+                                <option value="basic">Basic (£219)</option>
+                                <option value="pro">Pro (£399)</option>
+                                <option value="enterprise">Enterprise (£830)</option>
+                                <option value="custom">Custom solution</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-300 mb-2">Tell us about your automation needs</label>
+                            <textarea id="message" name="message" rows="5" class="w-full py-3 px-4 rounded-lg" required></textarea>
+                        </div>
+                        
                         <div>
-                            <label for="email" class="block text-gray-300 mb-2">Email</label>
-                            <input type="email" id="email" name="email" class="w-full py-3 px-4 rounded-lg" required>
+                            <button type="submit" class="btn-primary text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg w-full">
+                                Submit Inquiry
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="flex flex-col justify-center items-center">
+                        <div class="text-center mb-8">
+                            <p class="text-xl mb-3">
+                                <i class="fas fa-map-marker-alt text-electric-blue mr-2"></i>
+                                Manchester, UK
+                            </p>
+                            <p class="text-xl mb-6">
+                                <i class="fas fa-envelope text-electric-blue mr-2"></i>
+                                <a href="mailto:rogermalek1987@gmail.com" class="hover:text-electric-blue transition-colors">rogermalek1987@gmail.com</a>
+                            </p>
+                        </div>
+                        
+                        <!-- QR Code -->
+                        <div class="qr-code rounded-lg flex flex-col items-center">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.rogermalek.com" alt="QR Code to Roger Malek website" class="w-48 h-48 rounded-md">
+                            <p class="text-lg text-center mt-4 text-electric-blue font-semibold">Scan to visit our website</p>
+                            <p class="text-sm text-center mt-1 text-gray-400">www.rogermalek.com</p>
                         </div>
                     </div>
-
-                    <div class="mb-6">
-                        <label for="company" class="block text-gray-300 mb-2">Company</label>
-                        <input type="text" id="company" name="company" class="w-full py-3 px-4 rounded-lg">
-                    </div>
-
-                    <div class="mb-6">
-                        <label for="package" class="block text-gray-300 mb-2">Package Interest</label>
-                        <select id="package" name="package" class="w-full py-3 px-4 rounded-lg bg-gray-800 border border-gray-700">
-                            <option value="basic">Basic (£219)</option>
-                            <option value="pro">Pro (£399)</option>
-                            <option value="enterprise">Enterprise (£830)</option>
-                            <option value="custom">Custom solution</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-6">
-                        <label for="message" class="block text-gray-300 mb-2">Tell us about your automation needs</label>
-                        <textarea id="message" name="message" rows="5" class="w-full py-3 px-4 rounded-lg" required></textarea>
-                    </div>
-
-                    <div>
-                        <button type="submit" class="btn-primary text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg w-full">
-                            Submit Inquiry
-                        </button>
-                    </div>
-                </form>
-
-                <div class="mt-12 text-center">
-                    <p class="text-xl mb-3">
-                        <i class="fas fa-map-marker-alt text-electric-blue mr-2"></i>
-                        Manchester, UK
-                    </p>
-                    <p class="text-xl">
-                        <i class="fas fa-envelope text-electric-blue mr-2"></i>
-                        <a href="mailto:rogermalek1987@gmail.com" class="hover:text-electric-blue transition-colors">rogermalek1987@gmail.com</a>
-                    </p>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -773,27 +797,27 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
+                
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-
+                
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-
+                    
                     // Close mobile menu if open
                     document.getElementById('mobile-menu').classList.add('hidden');
                 }
             });
         });
-
+        
         // Simple animation for cards on scroll
         const observerOptions = {
             threshold: 0.1
         };
-
+        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -802,23 +826,23 @@
                 }
             });
         }, observerOptions);
-
-        document.querySelectorAll('.card, .benefit-card, .pricing-card').forEach(card => {
+        
+        document.querySelectorAll('.card, .benefit-card, .pricing-card, .qr-code').forEach(card => {
             observer.observe(card);
         });
     </script>
-
+    
     <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
+        
         .animate-fade-in {
             animation: fadeIn 0.6s ease forwards;
         }
-
-        .card, .benefit-card, .pricing-card {
+        
+        .card, .benefit-card, .pricing-card, .qr-code {
             opacity: 0;
         }
     </style>
