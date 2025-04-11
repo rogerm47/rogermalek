@@ -762,7 +762,7 @@
         </div>
     </section>
 
-    <!-- SEO Calculator Section -->
+    <!-- ROI Calculator Section -->
     <section id="calculator" class="py-20 px-6 md:px-12">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Automation <span class="gradient-text">ROI Calculator</span></h2>
@@ -1070,6 +1070,181 @@
             window.addEventListener('resize', checkFade);
             checkFade(); // Check on page load
         });
+        <script>
+        // ROI Calculator Logic (pozostaje bez zmian)
+        const employeeCount = document.getElementById('employeeCount');
+        const hourlyWage = document.getElementById('hourlyWage');
+        const hoursPerWeek = document.getElementById('hoursPerWeek');
+        const automationLevel = document.getElementById('automationLevel');
+
+        const employeeCountValue = document.getElementById('employeeCountValue');
+        const hourlyWageValue = document.getElementById('hourlyWageValue');
+        const hoursPerWeekValue = document.getElementById('hoursPerWeekValue');
+        const automationLevelValue = document.getElementById('automationLevelValue');
+
+        const hoursSaved = document.getElementById('hoursSaved');
+        const monthlySavings = document.getElementById('monthlySavings');
+        const annualSavings = document.getElementById('annualSavings');
+        const roiTimeline = document.getElementById('roiTimeline');
+
+        function calculateROI() {
+            const employees = parseInt(employeeCount.value);
+            const wage = parseInt(hourlyWage.value);
+            const hours = parseInt(hoursPerWeek.value);
+            const automation = parseInt(automationLevel.value) / 100;
+
+            // Update display values
+            employeeCountValue.textContent = employees;
+            hourlyWageValue.textContent = `£${wage}`;
+            hoursPerWeekValue.textContent = `${hours}h`;
+            automationLevelValue.textContent = `${automationLevel.value}%`;
+
+            // Calculate savings
+            const weeklySavedHours = Math.round(employees * hours * automation);
+            const monthlySavedMoney = Math.round(weeklySavedHours * wage * 4); // 4 weeks in a month
+            const annualSavedMoney = monthlySavedMoney * 12;
+
+            // Estimate ROI timeline (months to recoup cost)
+            // Assuming an average implementation cost based on plan
+            let implementationCost;
+            if (employees <= 10) {
+                implementationCost = 3000; // Basic plan setup
+            } else if (employees <= 30) {
+                implementationCost = 6000; // Pro plan setup
+            } else {
+                implementationCost = 12000; // Enterprise plan setup
+            }
+
+            const roiMonths = (monthlySavedMoney > 0) ?
+                Math.round((implementationCost / monthlySavedMoney) * 10) / 10 :
+                "--";
+
+            // Update results
+            hoursSaved.textContent = `${weeklySavedHours} hours`;
+            monthlySavings.textContent = `£${monthlySavedMoney.toLocaleString()}`;
+            annualSavings.textContent = `£${annualSavedMoney.toLocaleString()}`;
+            roiTimeline.textContent = `${roiMonths} months`;
+        }
+
+        // Add event listeners for ROI calculator
+        employeeCount.addEventListener('input', calculateROI);
+        hourlyWage.addEventListener('input', calculateROI);
+        hoursPerWeek.addEventListener('input', calculateROI);
+        automationLevel.addEventListener('input', calculateROI);
+
+        // Initial calculation for ROI
+        calculateROI();
+
+        // === NOWA LOGIKA DLA FORMULARZA KONTAKTOWEGO ===
+        const contactForm = document.getElementById('contactForm');
+        const submitButton = contactForm.querySelector('button[type="submit"]'); // Znajdź przycisk submit
+        const webhookUrl = 'https://primary-production-58a3.up.railway.app/webhook/d8c33e24-6d0e-4708-b8e6-9a790fa29be5'; // Twój URL webhooka n8n
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Zapobiegaj domyślnej akcji wysyłania formularza
+
+            // Wyłącz przycisk i pokaż status wysyłania
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            // Zbierz dane z formularza używając FormData
+            const formData = new FormData(contactForm);
+            const data = {};
+
+            // Zbierz zaznaczone checkboxy 'interest'
+            const interests = [];
+            contactForm.querySelectorAll('input[name="interest"]:checked').forEach(checkbox => {
+                interests.push(checkbox.value);
+            });
+
+            // Przetwórz pozostałe pola FormData
+            formData.forEach((value, key) => {
+                // Pomijamy 'interest' bo już go zebraliśmy osobno
+                // Pomijamy 'form-name' (ukryte pole Netlify)
+                // Pomijamy 'consent' bo obsłużymy go osobno
+                if (key !== 'interest' && key !== 'form-name' && key !== 'consent') {
+                    data[key] = value;
+                }
+            });
+
+            // Dodaj tablicę 'interest' do danych
+            data['interest'] = interests;
+
+            // Dodaj status checkboxa 'consent' (jako true/false)
+            const consentCheckbox = contactForm.querySelector('input[name="consent"]');
+            data['consent'] = consentCheckbox.checked;
+
+
+            // Wyślij dane do webhooka n8n
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json', // Ważne: wysyłamy jako JSON
+                },
+                body: JSON.stringify(data), // Konwertuj obiekt JavaScript na JSON
+            })
+            .then(response => {
+                // Sprawdź czy odpowiedź z serwera jest OK (status 2xx)
+                if (response.ok) {
+                    // Jeśli n8n zwraca jakąś odpowiedź (np. JSON), możesz ją przetworzyć tutaj
+                    // return response.json();
+                    // Jeśli n8n nic nie zwraca lub zwraca tekst, użyj .text()
+                    return response.text(); // Zakładamy, że n8n zwróci tekst lub nic
+                } else {
+                    // Jeśli wystąpił błąd po stronie serwera (np. 4xx, 5xx)
+                    // Spróbuj odczytać treść błędu, jeśli jest dostępna
+                    return response.text().then(text => {
+                         throw new Error(`Webhook request failed: ${response.status} - ${text || 'Server did not provide details'}`);
+                    });
+                }
+            })
+            .then(result => {
+                // Sukces - webhook przyjął dane
+                console.log('Webhook success:', result); // Opcjonalnie loguj odpowiedź z n8n
+                alert('Thank you! Your message has been sent successfully.'); // Poinformuj użytkownika
+                contactForm.reset(); // Wyczyść formularz
+            })
+            .catch(error => {
+                // Błąd - coś poszło nie tak z wysyłaniem
+                console.error('Error sending to webhook:', error);
+                alert(`Sorry, there was an error sending your message: ${error.message}. Please try again later.`); // Poinformuj użytkownika o błędzie
+            })
+            .finally(() => {
+                // Niezależnie od sukcesu czy błędu, włącz przycisk z powrotem
+                submitButton.disabled = false;
+                submitButton.textContent = 'Submit';
+            });
+        });
+
+        // Animation on scroll (pozostaje bez zmian)
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            function checkFade() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementBottom = element.getBoundingClientRect().bottom;
+                    const isVisible = (elementTop < window.innerHeight - 100) && (elementBottom > 0);
+
+                    if (isVisible) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+
+            // Set initial state for animations
+            fadeElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            });
+
+            window.addEventListener('scroll', checkFade);
+            window.addEventListener('resize', checkFade);
+            checkFade(); // Check on page load
+        });
     </script>
+
 </body>
 </html>
