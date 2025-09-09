@@ -20,7 +20,6 @@
 </head>
 <body class="bg-slate-50 text-slate-800">
 
-    <!-- Header -->
     <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-slate-900">
@@ -32,7 +31,6 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero-bg text-white pt-32 pb-20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Generate Flawless Roof Reports in Minutes</h2>
@@ -41,7 +39,6 @@
             </div>
         </section>
 
-        <!-- Features Section -->
         <section class="py-16 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
@@ -49,7 +46,6 @@
                     <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Go from inspection to invoice faster than ever before with powerful AI analysis.</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Feature 1 -->
                     <div class="bg-slate-100 p-8 rounded-xl shadow-sm">
                         <div class="bg-indigo-100 text-indigo-600 rounded-full h-12 w-12 flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
@@ -57,7 +53,6 @@
                         <h4 class="text-xl font-bold mb-2">Instant Analysis</h4>
                         <p class="text-slate-600">Our AI processes imagery in seconds, identifying hail damage, wind damage, rust, and material degradation with over 99% accuracy.</p>
                     </div>
-                    <!-- Feature 2 -->
                     <div class="bg-slate-100 p-8 rounded-xl shadow-sm">
                         <div class="bg-indigo-100 text-indigo-600 rounded-full h-12 w-12 flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
@@ -65,7 +60,6 @@
                         <h4 class="text-xl font-bold mb-2">Automated Reports</h4>
                         <p class="text-slate-600">Receive detailed, professional-grade PDF reports complete with annotated images, damage summaries, and repair recommendations.</p>
                     </div>
-                    <!-- Feature 3 -->
                     <div class="bg-slate-100 p-8 rounded-xl shadow-sm">
                         <div class="bg-indigo-100 text-indigo-600 rounded-full h-12 w-12 flex items-center justify-center mb-4">
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01" /></svg>
@@ -77,7 +71,6 @@
             </div>
         </section>
 
-        <!-- Contact Form Section -->
         <section id="contact-form" class="py-16 bg-slate-50">
             <div class="container mx-auto px-6">
                  <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg">
@@ -105,7 +98,7 @@
                                 <label for="phone_number" class="block text-sm font-semibold text-slate-700">Phone Number</label>
                                 <input type="tel" id="phone_number" name="phone_number" required class="mt-1 block w-full px-4 py-3 bg-slate-100 border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition">
                             </div>
-                            <div>
+                             <div>
                                 <label for="post_code" class="block text-sm font-semibold text-slate-700">Post Code</label>
                                 <input type="text" id="post_code" name="post_code" required class="mt-1 block w-full px-4 py-3 bg-slate-100 border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition">
                             </div>
@@ -120,6 +113,10 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-slate-700">Message</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-3 bg-slate-100 border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition" placeholder="Please provide any additional details..."></textarea>
+                        </div>
                         <button type="submit" id="submit-button" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-300">
                             Send Request
                         </button>
@@ -133,7 +130,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-slate-900 text-slate-400 py-8">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2024 RoofFlow AI. All rights reserved.</p>
@@ -189,5 +185,3 @@
     </script>
 </body>
 </html>
-
-
