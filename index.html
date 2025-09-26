@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoofFlow AI - AI-Powered Roof Inspection Reports</title>
+    <title>RoofFlow AI - Instant, Data-Driven Roof Cost Estimates & Reports</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +13,14 @@
             font-family: 'Inter', sans-serif;
         }
         .hero-bg {
-            background: linear-gradient(rgba(10, 20, 40, 0.7), rgba(10, 20, 40, 0.9)), url('https://placehold.co/1920x1080/374151/FFFFFF?text=Modern+Roof') no-repeat center center;
+            background: linear-gradient(rgba(10, 20, 40, 0.8), rgba(10, 20, 40, 0.95)), url('https://placehold.co/1920x1080/374151/FFFFFF?text=Modern+Roof') no-repeat center center;
             background-size: cover;
+        }
+        .step-circle {
+            @apply bg-slate-200 text-slate-600 rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg transition-colors duration-300;
+        }
+        .step-circle.active {
+            @apply bg-indigo-600 text-white;
         }
     </style>
 </head>
@@ -26,163 +32,298 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2 text-indigo-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 9l4 1.5V21h14v-10.5L23 9l-11-7zm-2.25 15.25H7.5v-3.5h2.25v3.5zm4.5 0h-2.25v-3.5h2.25v3.5zm4.5 0h-2.25v-3.5h2.25v3.5zM12 4.5l6.5 4.33V10h-13V8.83L12 4.5z"/></svg>
                 RoofFlow AI
             </h1>
-            <a href="#contact-form" class="bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Get Started</a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#calculator" class="text-slate-600 hover:text-indigo-600">For Homeowners</a>
+                <a href="#professionals" class="text-slate-600 hover:text-indigo-600">For Professionals</a>
+                <a href="#pricing" class="text-slate-600 hover:text-indigo-600">Pricing</a>
+                <a href="#contact-form" class="bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Get Started</a>
+            </nav>
         </div>
     </header>
 
     <main>
         <section class="hero-bg text-white pt-32 pb-20">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Generate Flawless Roof Reports in Minutes</h2>
-                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">Upload drone or phone images, and let our AI instantly detect damage, analyze materials, and create comprehensive inspection reports. Save time, reduce costs, and improve accuracy.</p>
-                <a href="#contact-form" class="bg-white text-indigo-600 font-bold text-lg px-8 py-4 rounded-lg hover:bg-slate-200 transition-colors duration-300">Request a Demo</a>
+                <h2 class="text-4xl md:text-6xl font-bold leading-tight mb-4">The Future of Roofing is Here.</h2>
+                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">Instant, AI-powered roof reports and cost estimates. Whether you're a homeowner planning a replacement or a professional streamlining your business, RoofFlow AI delivers accuracy in minutes.</p>
+                <a href="#calculator" class="bg-white text-indigo-600 font-bold text-lg px-8 py-4 rounded-lg hover:bg-slate-200 transition-colors duration-300">Estimate Your Roof Cost</a>
             </div>
         </section>
 
-        <section class="py-16 bg-white">
+        <section id="calculator" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Why Choose RoofFlow AI?</h3>
-                    <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Go from inspection to invoice faster than ever before with powerful AI analysis.</p>
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Instant Roof Cost Estimator</h3>
+                    <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Answer a few simple questions to receive a preliminary estimate for your roof replacement. It's fast, free, and data-driven.</p>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-slate-100 p-8 rounded-xl shadow-sm">
-                        <div class="bg-indigo-100 text-indigo-600 rounded-full h-12 w-12 flex items-center justify-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                <div class="max-w-3xl mx-auto bg-slate-100 p-8 md:p-12 rounded-2xl shadow-lg">
+                    <form id="calculator-form" class="space-y-8">
+                        <div id="step-1">
+                             <h4 class="text-xl font-bold mb-4 text-slate-800">Step 1: What type of property do you have?</h4>
+                             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="terraced" class="sr-only">Terraced House</label>
+                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="semi-detached" class="sr-only">Semi-Detached</label>
+                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="detached" class="sr-only">Detached House</label>
+                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="bungalow" class="sr-only">Bungalow</label>
+                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="flat" class="sr-only">Flat / Apartment</label>
+                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="other" class="sr-only">Other</label>
+                             </div>
                         </div>
-                        <h4 class="text-xl font-bold mb-2">Instant Analysis</h4>
-                        <p class="text-slate-600">Our AI processes imagery in seconds, identifying hail damage, wind damage, rust, and material degradation with over 99% accuracy.</p>
-                    </div>
-                    <div class="bg-slate-100 p-8 rounded-xl shadow-sm">
-                        <div class="bg-indigo-100 text-indigo-600 rounded-full h-12 w-12 flex items-center justify-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                        
+                        <div id="step-2">
+                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 2: What roofing material are you considering?</h4>
+                            <select name="material_choice" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition">
+                                 <option value="" disabled selected>Select a material</option>
+                                 <option value="slate">Natural Slate</option>
+                                 <option value="concrete_tile">Concrete Tiles</option>
+                                 <option value="clay_tile">Clay Tiles</option>
+                                 <option value="epdm_rubber">EPDM Rubber (Flat Roof)</option>
+                                 <option value="felt">Felt (Flat Roof)</option>
+                                 <option value="not_sure">I'm not sure</option>
+                             </select>
                         </div>
-                        <h4 class="text-xl font-bold mb-2">Automated Reports</h4>
-                        <p class="text-slate-600">Receive detailed, professional-grade PDF reports complete with annotated images, damage summaries, and repair recommendations.</p>
-                    </div>
-                    <div class="bg-slate-100 p-8 rounded-xl shadow-sm">
-                        <div class="bg-indigo-100 text-indigo-600 rounded-full h-12 w-12 flex items-center justify-center mb-4">
-                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01" /></svg>
+                        
+                        <div id="step-3">
+                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 3: What is the approximate area of your roof?</h4>
+                            <label for="roof_size" class="block text-sm font-medium text-slate-700">You can estimate this based on your home's floor area.</label>
+                            <input type="number" id="roof_size" name="roof_size" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg" placeholder="e.g., 70">
+                            <span class="text-sm text-slate-500">Square Metres (m²)</span>
                         </div>
-                        <h4 class="text-xl font-bold mb-2">Cost Effective</h4>
-                        <p class="text-slate-600">Dramatically reduce the time and labor costs associated with manual inspections. Maximize your team's efficiency and profitability.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section id="contact-form" class="py-16 bg-slate-50">
-            <div class="container mx-auto px-6">
-                 <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg">
-                    <div class="text-center mb-8">
-                        <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Get in Touch</h3>
-                        <p class="text-slate-600 mt-2">Fill out the form below to schedule a demo or ask a question.</p>
-                    </div>
-                    <form id="lead-form" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="first_name" class="block text-sm font-semibold text-slate-700">First Name</label>
-                                <input type="text" id="first_name" name="first_name" required class="mt-1 block w-full px-4 py-3 bg-slate-100 border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition">
+                        <div id="step-4">
+                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 4: Get Your Free Estimate!</h4>
+                            <p class="text-slate-600 mb-4">Enter your details below to receive your personalised cost estimate via email.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="first_name" class="block text-sm font-semibold text-slate-700">First Name</label>
+                                    <input type="text" id="first_name" name="first_name" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
+                                </div>
+                                <div>
+                                    <label for="post_code" class="block text-sm font-semibold text-slate-700">Post Code</label>
+                                    <input type="text" id="post_code" name="post_code" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
+                                </div>
                             </div>
-                            <div>
-                                <label for="last_name" class="block text-sm font-semibold text-slate-700">Last Name</label>
-                                <input type="text" id="last_name" name="last_name" required class="mt-1 block w-full px-4 py-3 bg-slate-100 border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-semibold text-slate-700">E-mail</label>
-                            <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 bg-slate-100 border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition">
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                             <div>
-                                <label for="phone_number" class="block text-sm font-semibold text-slate-700">Phone Number</label>
-                                <input type="tel" id="phone_number" name="phone_number" required class="mt-1 block w-full px-4 py-3 bg-slate-100 border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition">
-                            </div>
-                             <div>
-                                <label for="post_code" class="block text-sm font-semibold text-slate-700">Post Code</label>
-                                <input type="text" id="post_code" name="post_code" required class="mt-1 block w-full px-4 py-3 bg-slate-100 border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition">
+                            <div class="mt-6">
+                                <label for="email" class="block text-sm font-semibold text-slate-700">E-mail</label>
+                                <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
                             </div>
                         </div>
-                        <div>
-                            <label for="service_type" class="block text-sm font-semibold text-slate-700">Service Type</label>
-                            <select id="service_type" name="service_type" required class="mt-1 block w-full px-4 py-3 bg-slate-100 border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition appearance-none">
-                                <option value="" disabled selected>Select a service</option>
-                                <option value="damage_inspection">Damage Inspection</option>
-                                <option value="new_roof_quote">New Roof Quote</option>
-                                <option value="general_maintenance">General Maintenance</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-semibold text-slate-700">Message</label>
-                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-3 bg-slate-100 border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition" placeholder="Please provide any additional details..."></textarea>
-                        </div>
-                        <button type="submit" id="submit-button" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-300">
-                            Send Request
+
+                        <button type="submit" id="submit-button" class="w-full bg-indigo-600 text-white font-bold py-4 px-6 rounded-lg hover:bg-indigo-700 text-lg transition-colors duration-300">
+                            Calculate My Estimate
                         </button>
                     </form>
                     <div id="success-message" class="hidden mt-6 p-4 bg-green-100 text-green-800 border border-green-200 rounded-lg text-center">
                         <p class="font-semibold">Thank you!</p>
-                        <p>Your message has been sent successfully. We'll be in touch shortly.</p>
+                        <p>Your estimate is being calculated and will be sent to your email address shortly.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="costs" class="py-20 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Understanding UK Roofing Costs</h3>
+                    <p class="text-slate-600 mt-2 max-w-3xl mx-auto">All costs are estimates and can vary based on location, materials, and complexity. Data based on 2025 market analysis.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <h4 class="text-xl font-bold mb-3 text-slate-900">Average Replacement Cost (Pitched Roof)</h4>
+                        <ul class="space-y-2 text-slate-600">
+                            <li><strong class="font-semibold text-slate-800">Terraced House:</strong> £5,000 - £8,000</li>
+                            <li><strong class="font-semibold text-slate-800">Semi-Detached House:</strong> £6,000 - £10,000</li>
+                            <li><strong class="font-semibold text-slate-800">Detached House:</strong> £8,000 - £15,000+</li>
+                        </ul>
+                    </div>
+                     <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <h4 class="text-xl font-bold mb-3 text-slate-900">Cost Per Square Metre (m²) by Material</h4>
+                         <ul class="space-y-2 text-slate-600">
+                            <li><strong class="font-semibold text-slate-800">Concrete Tiles:</strong> £50 - £90 per m²</li>
+                            <li><strong class="font-semibold text-slate-800">Natural Slate:</strong> £90 - £180 per m²</li>
+                            <li><strong class="font-semibold text-slate-800">EPDM Rubber (Flat):</strong> £80 - £120 per m²</li>
+                            <li><strong class="font-semibold text-slate-800">Felt (Flat):</strong> £50 - £80 per m²</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="max-w-5xl mx-auto bg-white p-8 rounded-xl shadow-sm mt-8">
+                     <h4 class="text-xl font-bold mb-3 text-slate-900 text-center">Key Factors Affecting Price</h4>
+                     <p class="text-slate-600 text-center">Your final quote will depend on several variables:</p>
+                     <ul class="mt-4 grid md:grid-cols-2 gap-x-8 gap-y-2 text-slate-600 list-disc list-inside">
+                        <li>Size and pitch of the roof</li>
+                        <li>Choice of materials</li>
+                        <li>Scaffolding hire costs</li>
+                        <li>Waste removal and skip hire</li>
+                        <li>Condition of underlying roof structure</li>
+                        <li>Number of chimneys or skylights</li>
+                        <li>Geographic location (e.g., London vs. North)</li>
+                        <li>Ease of access to the property</li>
+                     </ul>
                  </div>
             </div>
         </section>
+
+        <section id="professionals" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h3 class="text-3xl md:text-4xl font-bold text-slate-900">For Roofing Professionals</h3>
+                    <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Stop guessing. Start winning. Go from site visit to professional quote in record time.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-slate-100 p-8 rounded-xl shadow-sm">
+                        <h4 class="text-xl font-bold mb-2">Generate Reports in Minutes</h4>
+                        <p class="text-slate-600">Upload drone or phone images. Our AI instantly measures roof area, identifies materials, and detects damage with over 99% accuracy.</p>
+                    </div>
+                    <div class="bg-slate-100 p-8 rounded-xl shadow-sm">
+                        <h4 class="text-xl font-bold mb-2">Create Winning Bids</h4>
+                        <p class="text-slate-600">Produce professional, detailed PDF reports and quotes complete with annotated images, damage summaries, and material lists. Impress clients and win more jobs.</p>
+                    </div>
+                    <div class="bg-slate-100 p-8 rounded-xl shadow-sm">
+                        <h4 class="text-xl font-bold mb-2">Increase Efficiency</h4>
+                        <p class="text-slate-600">Dramatically reduce the time and labor costs of manual surveys and quoting. Free up your team to focus on what they do best: quality installation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="py-20 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Simple, Transparent Pricing</h3>
+                    <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Choose the plan that's right for your business. Cancel anytime.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border-2 border-slate-200">
+                        <h4 class="text-2xl font-bold text-slate-900">Starter</h4>
+                        <p class="text-slate-500 mt-2">For individuals and small teams.</p>
+                        <p class="text-4xl font-bold text-slate-900 mt-6">£49<span class="text-lg font-medium text-slate-500">/month</span></p>
+                        <ul class="mt-6 space-y-3 text-slate-600">
+                            <li>Up to 10 AI reports per month</li>
+                            <li>Standard roof measurements</li>
+                            <li>Basic damage detection</li>
+                            <li>Email support</li>
+                        </ul>
+                        <a href="#contact-form" class="mt-8 block w-full text-center bg-slate-200 text-slate-800 font-semibold py-3 rounded-lg">Choose Plan</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-2xl border-2 border-indigo-600 relative">
+                        <span class="absolute top-0 -translate-y-1/2 bg-indigo-600 text-white font-semibold px-4 py-1 rounded-full text-sm">Most Popular</span>
+                        <h4 class="text-2xl font-bold text-slate-900">Pro</h4>
+                        <p class="text-slate-500 mt-2">For growing roofing businesses.</p>
+                        <p class="text-4xl font-bold text-slate-900 mt-6">£99<span class="text-lg font-medium text-slate-500">/month</span></p>
+                        <ul class="mt-6 space-y-3 text-slate-600">
+                            <li>Up to 50 AI reports per month</li>
+                            <li>Advanced measurements & pitch</li>
+                            <li>Detailed damage detection (hail, wind)</li>
+                            <li>Branded PDF reports</li>
+                            <li>Priority email & chat support</li>
+                        </ul>
+                        <a href="#contact-form" class="mt-8 block w-full text-center bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-700">Choose Plan</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border-2 border-slate-200">
+                        <h4 class="text-2xl font-bold text-slate-900">Business</h4>
+                        <p class="text-slate-500 mt-2">For large-scale operations.</p>
+                        <p class="text-4xl font-bold text-slate-900 mt-6">Contact Us</p>
+                        <ul class="mt-6 space-y-3 text-slate-600">
+                            <li>Unlimited AI reports</li>
+                            <li>API access for integration</li>
+                            <li>Team management features</li>
+                            <li>Dedicated account manager</li>
+                        </ul>
+                        <a href="#contact-form" class="mt-8 block w-full text-center bg-slate-200 text-slate-800 font-semibold py-3 rounded-lg">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-form" class="py-20 bg-white">
+             <div class="container mx-auto px-6">
+                 <div class="max-w-2xl mx-auto text-center">
+                     <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Ready to Get Started?</h3>
+                     <p class="text-slate-600 mt-2">Contact us for a demo, a business enquiry, or any other questions.</p>
+                 </div>
+                 <div class="max-w-2xl mx-auto bg-slate-50 mt-8 p-8 rounded-2xl shadow-md">
+                     <form id="general-contact-form" class="space-y-6">
+                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                             <div>
+                                 <label for="contact_first_name" class="block text-sm font-semibold text-slate-700">First Name</label>
+                                 <input type="text" id="contact_first_name" name="first_name" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
+                             </div>
+                             <div>
+                                 <label for="contact_last_name" class="block text-sm font-semibold text-slate-700">Last Name</label>
+                                 <input type="text" id="contact_last_name" name="last_name" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
+                             </div>
+                         </div>
+                         <div>
+                             <label for="contact_email" class="block text-sm font-semibold text-slate-700">E-mail</label>
+                             <input type="email" id="contact_email" name="email" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
+                         </div>
+                          <div>
+                            <label for="message" class="block text-sm font-semibold text-slate-700">Message</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg" placeholder="How can we help?"></textarea>
+                        </div>
+                         <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700">Send Message</button>
+                     </form>
+                 </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="bg-slate-900 text-slate-400 py-8">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 RoofFlow AI. All rights reserved.</p>
+            <p>&copy; 2025 RoofFlow AI. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        const form = document.getElementById('lead-form');
+        const form = document.getElementById('calculator-form');
         const successMessage = document.getElementById('success-message');
         const submitButton = document.getElementById('submit-button');
+        // Your actual n8n webhook URL
         const webhookUrl = 'https://primary-production-58a3.up.railway.app/webhook/02974baa-98ae-4ba5-8ef5-787a5bcbe95e';
 
         form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission (page reload)
-
-            // Show loading state
+            event.preventDefault();
             submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
-            submitButton.classList.add('opacity-75', 'cursor-not-allowed');
-
+            submitButton.textContent = 'Calculating...';
+            
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
 
             fetch(webhookUrl, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
             })
             .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                // Handle non-2xx responses
+                if (response.ok) return response.json();
                 throw new Error('Network response was not ok.');
             })
             .then(data => {
                 console.log('Success:', data);
-                form.classList.add('hidden'); // Hide the form
-                successMessage.classList.remove('hidden'); // Show the success message
+                form.classList.add('hidden');
+                successMessage.classList.remove('hidden');
             })
             .catch((error) => {
                 console.error('Error:', error);
-                // Optionally, show an error message to the user
                 alert('An error occurred. Please try again.');
-                // Restore button state on error
                 submitButton.disabled = false;
-                submitButton.textContent = 'Send Request';
-                submitButton.classList.remove('opacity-75', 'cursor-not-allowed');
+                submitButton.textContent = 'Calculate My Estimate';
             });
         });
+        
+        // A simple script to handle radio button selection styling
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', (event) => {
+                // Remove 'active' style from all labels in the same group
+                document.querySelectorAll(`input[name="${event.target.name}"]`).forEach(sibling => {
+                    sibling.parentElement.classList.remove('ring-2', 'ring-indigo-500');
+                });
+                // Add 'active' style to the selected label
+                event.target.parentElement.classList.add('ring-2', 'ring-indigo-500');
+            });
+        });
+
     </script>
 </body>
 </html>
-
