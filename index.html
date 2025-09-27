@@ -35,7 +35,7 @@
             <nav class="hidden md:flex items-center space-x-6">
                 <a href="#calculator" class="text-slate-600 hover:text-indigo-600">For Homeowners</a>
                 <a href="#professionals" class="text-slate-600 hover:text-indigo-600">For Professionals</a>
-                <a href="#contact-form" class="bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Get Started</a>
+                <a href="#calculator" class="bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Get Started</a>
             </nav>
         </div>
     </header>
@@ -189,42 +189,6 @@
             </div>
         </section>
 
-        <section id="contact-form" class="py-20 bg-slate-100">
-             <div class="container mx-auto px-6">
-                 <div class="max-w-2xl mx-auto text-center">
-                     <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Ready to Get Started?</h3>
-                     <p class="text-slate-600 mt-2">Contact us for a demo, a business enquiry, or any other questions.</p>
-                 </div>
-                 <div class="max-w-2xl mx-auto bg-white mt-8 p-8 rounded-2xl shadow-md">
-                     <form id="general-contact-form" class="space-y-6">
-                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                             <div>
-                                 <label for="contact_first_name" class="block text-sm font-semibold text-slate-700">First Name</label>
-                                 <input type="text" id="contact_first_name" name="first_name" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
-                             </div>
-                             <div>
-                                 <label for="contact_last_name" class="block text-sm font-semibold text-slate-700">Last Name</label>
-                                 <input type="text" id="contact_last_name" name="last_name" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
-                             </div>
-                         </div>
-                         <div>
-                             <label for="contact_email" class="block text-sm font-semibold text-slate-700">E-mail</label>
-                             <input type="email" id="contact_email" name="email" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
-                         </div>
-                         <div>
-                            <label for="contact_phone_number" class="block text-sm font-semibold text-slate-700">Phone Number</label>
-                            <input type="tel" id="contact_phone_number" name="phone_number" class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg" placeholder="Optional">
-                        </div>
-                          <div>
-                            <label for="message" class="block text-sm font-semibold text-slate-700">Message</label>
-                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg" placeholder="How can we help?"></textarea>
-                        </div>
-                         <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700">Send Message</button>
-                     </form>
-                 </div>
-            </div>
-        </section>
-
     </main>
 
     <footer class="bg-slate-900 text-slate-400 py-8">
@@ -281,9 +245,6 @@
                 event.target.parentElement.classList.add('ring-2', 'ring-indigo-500');
             });
         });
-        
-        // Note: The second contact form (`general-contact-form`) is currently not wired up to a submission script.
-        // You would typically create a second event listener for it, similar to the one for the calculator.
 
     </script>
 </body>
