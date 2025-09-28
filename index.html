@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoofFlow AI - Instant, Data-Driven Roof Cost Estimates & Reports</title>
+    <title>RoofFlow AI - Professional Roofing Services in Manchester</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,58 +26,57 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2 text-indigo-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 9l4 1.5V21h14v-10.5L23 9l-11-7zm-2.25 15.25H7.5v-3.5h2.25v3.5zm4.5 0h-2.25v-3.5h2.25v3.5zm4.5 0h-2.25v-3.5h2.25v3.5zM12 4.5l6.5 4.33V10h-13V8.83L12 4.5z"/></svg>
                 RoofFlow AI
             </h1>
-            <nav class="hidden md:flex items-center space-x-6">
-                <a href="#calculator" class="text-slate-600 hover:text-indigo-600">For Homeowners</a>
-                <a href="#professionals" class="text-slate-600 hover:text-indigo-600">For Professionals</a>
-                <a href="#calculator" class="bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Get Started</a>
-            </nav>
+            <a href="#quote-form" class="bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Get a Free Quote</a>
         </div>
     </header>
 
     <main>
-        <section id="calculator" class="py-20 bg-white">
+        <section class="hero-bg text-white pt-32 pb-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Quality Roofing Services in Manchester</h2>
+                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+                    Based in Manchester, RoofFlow AI is a forward-thinking roofing company that combines traditional craftsmanship with modern technology to deliver exceptional results. We pride ourselves on reliability, quality materials, and a seamless customer experience from start to finish. Our expert team is ready to handle all your roofing needs, ensuring your property is safe and secure.
+                </p>
+                <a href="#quote-form" class="bg-white text-indigo-600 font-bold text-lg px-8 py-4 rounded-lg hover:bg-slate-200 transition-colors duration-300">Get a Free Quote</a>
+            </div>
+        </section>
+
+        <section id="quote-form" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Instant Roof Cost Estimator</h3>
-                    <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Answer a few simple questions to receive a preliminary estimate for your roof replacement. It's fast, free, and data-driven.</p>
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Get a Free, No-Obligation Quote</h3>
+                    <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Fill in the details below, and our team will get back to you shortly to discuss your project.</p>
                 </div>
                 <div class="max-w-3xl mx-auto bg-slate-100 p-8 md:p-12 rounded-2xl shadow-lg">
-                    <form id="calculator-form" class="space-y-8">
+                    <form id="quote-request-form" class="space-y-8">
+                        
                         <div id="step-1">
-                             <h4 class="text-xl font-bold mb-4 text-slate-800">Step 1: What type of property do you have?</h4>
+                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 1: What service do you need?</h4>
+                            <select id="service_type" name="service_type" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition">
+                                 <option value="" disabled selected>Please select a service</option>
+                                 <option value="new_roof_replacement">New Roof / Replacement</option>
+                                 <option value="roof_repair">Roof Repair (Leaks, Damage)</option>
+                                 <option value="flat_roofing">Flat Roofing (Installation & Repair)</option>
+                                 <option value="guttering_fascias">Guttering, Fascias & Soffits</option>
+                                 <option value="inspection_survey">General Inspection / Survey</option>
+                                 <option value="other">Other</option>
+                             </select>
+                        </div>
+
+                        <div id="step-2">
+                             <h4 class="text-xl font-bold mb-4 text-slate-800">Step 2: What type of property is it?</h4>
                              <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="terraced" class="sr-only">Terraced House</label>
+                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="terraced" class="sr-only">Terraced</label>
                                  <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="semi-detached" class="sr-only">Semi-Detached</label>
-                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="detached" class="sr-only">Detached House</label>
+                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="detached" class="sr-only">Detached</label>
                                  <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="bungalow" class="sr-only">Bungalow</label>
-                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="flat" class="sr-only">Flat / Apartment</label>
+                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="commercial" class="sr-only">Commercial</label>
                                  <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="other" class="sr-only">Other</label>
                              </div>
                         </div>
                         
-                        <div id="step-2">
-                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 2: What roofing material are you considering?</h4>
-                            <select name="material_choice" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition">
-                                 <option value="" disabled selected>Select a material</option>
-                                 <option value="slate">Natural Slate</option>
-                                 <option value="concrete_tile">Concrete Tiles</option>
-                                 <option value="clay_tile">Clay Tiles</option>
-                                 <option value="epdm_rubber">EPDM Rubber (Flat Roof)</option>
-                                 <option value="felt">Felt (Flat Roof)</option>
-                                 <option value="not_sure">I'm not sure</option>
-                             </select>
-                        </div>
-                        
                         <div id="step-3">
-                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 3: What is the approximate area of your roof?</h4>
-                            <label for="roof_size" class="block text-sm font-medium text-slate-700">You can estimate this based on your home's floor area.</label>
-                            <input type="number" id="roof_size" name="roof_size" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg" placeholder="e.g., 70">
-                            <span class="text-sm text-slate-500">Square Metres (m²)</span>
-                        </div>
-
-                        <div id="step-4">
-                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 4: What is your approximate budget?</h4>
-                            <label for="budget_range" class="block text-sm font-medium text-slate-700">This helps us understand the scope and recommend the best solutions.</label>
+                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 3: What is your approximate budget?</h4>
                             <select id="budget_range" name="budget_range" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition">
                                 <option value="" disabled selected>Please select a budget range</option>
                                 <option value="under_5k">Under £5,000</option>
@@ -89,42 +88,41 @@
                             </select>
                         </div>
 
-                        <div id="step-5">
-                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 5: Get Your Free Estimate!</h4>
-                            <p class="text-slate-600 mb-4">Enter your details below to receive your personalised cost estimate via email.</p>
+                        <div id="step-4">
+                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 4: Your Contact Details</h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="first_name" class="block text-sm font-semibold text-slate-700">First Name</label>
                                     <input type="text" id="first_name" name="first_name" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
                                 </div>
                                 <div>
-                                    <label for="post_code" class="block text-sm font-semibold text-slate-700">Post Code</label>
-                                    <input type="text" id="post_code" name="post_code" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
+                                    <label for="phone_number" class="block text-sm font-semibold text-slate-700">Phone Number</label>
+                                    <input type="tel" id="phone_number" name="phone_number" class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg" placeholder="e.g., 07123 456789">
                                 </div>
                             </div>
                             <div class="mt-6">
                                 <label for="email" class="block text-sm font-semibold text-slate-700">E-mail</label>
                                 <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
                             </div>
-                            <div class="mt-6">
-                                <label for="phone_number" class="block text-sm font-semibold text-slate-700">Phone Number</label>
-                                <input type="tel" id="phone_number" name="phone_number" class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg" placeholder="e.g., 07123 456789">
+                             <div class="mt-6">
+                                <label for="post_code" class="block text-sm font-semibold text-slate-700">Post Code</label>
+                                <input type="text" id="post_code" name="post_code" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
                             </div>
                         </div>
 
                         <button type="submit" id="submit-button" class="w-full bg-indigo-600 text-white font-bold py-4 px-6 rounded-lg hover:bg-indigo-700 text-lg transition-colors duration-300">
-                            Calculate My Estimate
+                            Request My Free Quote
                         </button>
                     </form>
                     <div id="success-message" class="hidden mt-6 p-4 bg-green-100 text-green-800 border border-green-200 rounded-lg text-center">
                         <p class="font-semibold">Thank you!</p>
-                        <p>Your estimate is being calculated and will be sent to your email address shortly.</p>
+                        <p>Your quote request has been sent successfully. Our team will be in touch shortly.</p>
                     </div>
                 </div>
             </div>
         </section>
         
-        </main>
+    </main>
 
     <footer class="bg-slate-900 text-slate-400 py-8">
         <div class="container mx-auto px-6 text-center">
@@ -133,7 +131,7 @@
     </footer>
 
     <script>
-        const form = document.getElementById('calculator-form');
+        const form = document.getElementById('quote-request-form');
         const successMessage = document.getElementById('success-message');
         const submitButton = document.getElementById('submit-button');
         const webhookUrl = 'https://primary-production-58a3.up.railway.app/webhook-test/02974baa-98ae-4ba5-8ef5-787a5bcbe95e';
@@ -141,18 +139,14 @@
         form.addEventListener('submit', function(event) {
             event.preventDefault();
             submitButton.disabled = true;
-            submitButton.textContent = 'Calculating...';
+            submitButton.textContent = 'Sending...';
             
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
 
-            // --- POCZĄTEK NOWEJ LOGIKI ---
-            // Sprawdza, czy numer telefonu istnieje i zaczyna się od '0'
             if (data.phone_number && data.phone_number.startsWith('0')) {
-                // Usuwa wiodące '0' i dodaje prefix '+44'
                 data.phone_number = '+44' + data.phone_number.substring(1);
             }
-            // --- KONIEC NOWEJ LOGIKI ---
 
             fetch(webhookUrl, {
                 method: 'POST',
@@ -172,11 +166,10 @@
                 console.error('Error:', error);
                 alert('An error occurred. Please try again.');
                 submitButton.disabled = false;
-                submitButton.textContent = 'Calculate My Estimate';
+                submitButton.textContent = 'Request My Free Quote';
             });
         });
         
-        // A simple script to handle radio button selection styling
         document.querySelectorAll('input[type="radio"]').forEach(radio => {
             radio.addEventListener('change', (event) => {
                 document.querySelectorAll(`input[name="${event.target.name}"]`).forEach(sibling => {
