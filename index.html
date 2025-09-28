@@ -16,12 +16,6 @@
             background: linear-gradient(rgba(10, 20, 40, 0.8), rgba(10, 20, 40, 0.95)), url('https://placehold.co/1920x1080/374151/FFFFFF?text=Modern+Roof') no-repeat center center;
             background-size: cover;
         }
-        .step-circle {
-            @apply bg-slate-200 text-slate-600 rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg transition-colors duration-300;
-        }
-        .step-circle.active {
-            @apply bg-indigo-600 text-white;
-        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
@@ -90,7 +84,21 @@
                         </div>
 
                         <div id="step-4">
-                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 4: Get Your Free Estimate!</h4>
+                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 4: What is your approximate budget?</h4>
+                            <label for="budget_range" class="block text-sm font-medium text-slate-700">This helps us understand the scope and recommend the best solutions.</label>
+                            <select id="budget_range" name="budget_range" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition">
+                                <option value="" disabled selected>Please select a budget range</option>
+                                <option value="under_5k">Under £5,000</option>
+                                <option value="5k_8k">£5,000 - £8,000</option>
+                                <option value="8k_12k">£8,000 - £12,000</option>
+                                <option value="12k_20k">£12,000 - £20,000</option>
+                                <option value="over_20k">£20,000+</option>
+                                <option value="not_sure">I'm not sure / Just looking for a quote</option>
+                            </select>
+                        </div>
+
+                        <div id="step-5">
+                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 5: Get Your Free Estimate!</h4>
                             <p class="text-slate-600 mb-4">Enter your details below to receive your personalised cost estimate via email.</p>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
