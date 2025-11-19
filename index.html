@@ -3,120 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoofFlow AI - Professional Roofing Services in Manchester</title>
+    <title>RoofFlow AI - Automation for Home Service Businesses</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
         .hero-bg {
-            background: linear-gradient(rgba(10, 20, 40, 0.8), rgba(10, 20, 40, 0.95)), url('https://placehold.co/1920x1080/374151/FFFFFF?text=Modern+Roof') no-repeat center center;
+            /* Image: Tradesperson looking at tablet/phone - representing automation management */
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
             background-size: cover;
+            background-attachment: fixed;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
         }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
 
-    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
+    <!-- Navigation -->
+    <header class="bg-white/90 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm border-b border-slate-200">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-slate-900">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2 text-indigo-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 9l4 1.5V21h14v-10.5L23 9l-11-7zm-2.25 15.25H7.5v-3.5h2.25v3.5zm4.5 0h-2.25v-3.5h2.25v3.5zm4.5 0h-2.25v-3.5h2.25v3.5zM12 4.5l6.5 4.33V10h-13V8.83L12 4.5z"/></svg>
-                RoofFlow AI
-            </h1>
-            <a href="#quote-form" class="bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-300">Get a Free Quote</a>
+            <div class="flex items-center gap-2">
+                <!-- AI/Automation Icon -->
+                <div class="bg-indigo-600 text-white p-2 rounded-lg">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <h1 class="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
+                    RoofFlow <span class="text-indigo-600">AI</span>
+                </h1>
+            </div>
+            <a href="#demo-section" class="bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-300 shadow-lg shadow-indigo-500/30">
+                Try the Demo
+            </a>
         </div>
     </header>
 
     <main>
-        <section class="hero-bg text-white pt-32 pb-20">
+        <!-- Hero Section -->
+        <section class="hero-bg text-white pt-32 pb-24">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Quality Roofing Services in Manchester</h2>
-                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-                    Based in Manchester, RoofFlow AI is a forward-thinking roofing company that combines traditional craftsmanship with modern technology to deliver exceptional results. We pride ourselves on reliability, quality materials, and a seamless customer experience from start to finish. Our expert team is ready to handle all your roofing needs, ensuring your property is safe and secure.
+                <div class="inline-block bg-indigo-500/20 border border-indigo-400/30 rounded-full px-4 py-1 mb-6 backdrop-blur-sm">
+                    <span class="text-indigo-200 text-sm font-semibold uppercase tracking-wider">For Roofers, Plumbers & Electricians</span>
+                </div>
+                <h2 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    Stop Missing Calls While<br/> <span class="text-indigo-400">You're On The Job.</span>
+                </h2>
+                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                    I build AI agents that capture leads, quote customers, and book appointments automatically. 
+                    Focus on your trade—let my systems handle the admin.
                 </p>
-                <a href="#quote-form" class="bg-white text-indigo-600 font-bold text-lg px-8 py-4 rounded-lg hover:bg-slate-200 transition-colors duration-300">Get a Free Quote</a>
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <a href="#demo-section" class="bg-indigo-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 hover:-translate-y-1 shadow-xl">
+                        Test the Live Demo
+                    </a>
+                    <a href="#how-it-works" class="bg-transparent border border-slate-400 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-white/10 transition-colors duration-300">
+                        How It Works
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section id="quote-form" class="py-20 bg-white">
+        <!-- Value Props -->
+        <section id="how-it-works" class="py-16 bg-white border-b border-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-10 text-center">
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-blue-600 text-2xl">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Instant Response</h3>
+                        <p class="text-slate-600">Leads get a reply in under 60 seconds, preventing them from calling your competitors.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-green-600 text-2xl">
+                            <i class="fa-solid fa-filter-circle-dollar"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Auto-Qualification</h3>
+                        <p class="text-slate-600">My AI asks the right questions (budget, location, job type) so you only talk to serious buyers.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-purple-600 text-2xl">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Smart Booking</h3>
+                        <p class="text-slate-600">Jobs are added directly to your calendar. You just show up and do the work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEMO SECTION -->
+        <section id="demo-section" class="py-20 bg-slate-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Get a Free, No-Obligation Quote</h3>
-                    <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Fill in the details below, and our team will get back to you shortly to discuss your project.</p>
+                    <span class="text-indigo-600 font-bold tracking-wide uppercase text-sm">Live Capability Test</span>
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Try It Yourself</h3>
+                    <p class="text-slate-600 mt-4 max-w-2xl mx-auto">
+                        Pretend you are a homeowner looking for a service. Fill out this form to see how I collect structured data 
+                        and send it instantly to the backend (n8n).
+                    </p>
                 </div>
-                <div class="max-w-3xl mx-auto bg-slate-100 p-8 md:p-12 rounded-2xl shadow-lg">
-                    <form id="quote-request-form" class="space-y-8">
+
+                <div class="max-w-4xl mx-auto bg-white border border-slate-200 p-8 md:p-12 rounded-2xl shadow-xl relative overflow-hidden">
+                    <!-- Decorative background blob -->
+                    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-indigo-50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+
+                    <form id="quote-request-form" class="space-y-8 relative z-10">
                         
-                        <div id="step-1">
-                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 1: What service do you need?</h4>
-                            <select id="service_type" name="service_type" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition">
-                                 <option value="" disabled selected>Please select a service</option>
-                                 <option value="new_roof_replacement">New Roof / Replacement</option>
-                                 <option value="roof_repair">Roof Repair (Leaks, Damage)</option>
-                                 <option value="flat_roofing">Flat Roofing (Installation & Repair)</option>
-                                 <option value="guttering_fascias">Guttering, Fascias & Soffits</option>
-                                 <option value="inspection_survey">General Inspection / Survey</option>
-                                 <option value="other">Other</option>
-                             </select>
+                        <!-- Step 1 -->
+                        <div id="step-1" class="border-b border-slate-100 pb-8">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="bg-indigo-100 text-indigo-700 font-bold w-8 h-8 rounded-full flex items-center justify-center text-sm">1</div>
+                                <h4 class="text-xl font-bold text-slate-800">Select a Service Scenario</h4>
+                            </div>
+                            <p class="text-sm text-slate-500 mb-3 ml-11">Choose a service type to simulate different workflows.</p>
+                            <div class="ml-11">
+                                <select id="service_type" name="service_type" required class="w-full px-4 py-3 bg-slate-50 border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition cursor-pointer hover:bg-slate-100">
+                                    <option value="" disabled selected>Select scenario...</option>
+                                    <option value="new_roof_replacement">Roofing: New Roof / Replacement</option>
+                                    <option value="roof_repair">Roofing: Leak Repair</option>
+                                    <option value="boiler_service">Plumbing: Boiler Service</option>
+                                    <option value="leak_detection">Plumbing: Leak Detection</option>
+                                    <option value="electrical_rewire">Electrical: Full Rewire</option>
+                                    <option value="inspection_survey">General: Site Inspection</option>
+                                    <option value="other">Other Service</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div id="step-2">
-                             <h4 class="text-xl font-bold mb-4 text-slate-800">Step 2: What type of property is it?</h4>
-                             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="terraced" class="sr-only">Terraced</label>
-                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="semi-detached" class="sr-only">Semi-Detached</label>
-                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="detached" class="sr-only">Detached</label>
-                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="bungalow" class="sr-only">Bungalow</label>
-                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="commercial" class="sr-only">Commercial</label>
-                                 <label class="bg-white p-4 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition"><input type="radio" name="property_type" value="other" class="sr-only">Other</label>
-                             </div>
+                        <!-- Step 2 -->
+                        <div id="step-2" class="border-b border-slate-100 pb-8">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="bg-indigo-100 text-indigo-700 font-bold w-8 h-8 rounded-full flex items-center justify-center text-sm">2</div>
+                                <h4 class="text-xl font-bold text-slate-800">Property Type</h4>
+                            </div>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 ml-11">
+                                <label class="relative">
+                                    <input type="radio" name="property_type" value="terraced" class="peer sr-only">
+                                    <div class="p-4 rounded-lg border border-slate-200 bg-white text-center cursor-pointer hover:bg-slate-50 peer-checked:border-indigo-500 peer-checked:ring-1 peer-checked:ring-indigo-500 peer-checked:bg-indigo-50 transition-all">
+                                        <i class="fa-solid fa-home mb-2 text-slate-400 peer-checked:text-indigo-600 block"></i>
+                                        Terraced
+                                    </div>
+                                </label>
+                                <label class="relative">
+                                    <input type="radio" name="property_type" value="semi-detached" class="peer sr-only">
+                                    <div class="p-4 rounded-lg border border-slate-200 bg-white text-center cursor-pointer hover:bg-slate-50 peer-checked:border-indigo-500 peer-checked:ring-1 peer-checked:ring-indigo-500 peer-checked:bg-indigo-50 transition-all">
+                                        <i class="fa-solid fa-building mb-2 text-slate-400 peer-checked:text-indigo-600 block"></i>
+                                        Semi
+                                    </div>
+                                </label>
+                                <label class="relative">
+                                    <input type="radio" name="property_type" value="detached" class="peer sr-only">
+                                    <div class="p-4 rounded-lg border border-slate-200 bg-white text-center cursor-pointer hover:bg-slate-50 peer-checked:border-indigo-500 peer-checked:ring-1 peer-checked:ring-indigo-500 peer-checked:bg-indigo-50 transition-all">
+                                        <i class="fa-solid fa-tree mb-2 text-slate-400 peer-checked:text-indigo-600 block"></i>
+                                        Detached
+                                    </div>
+                                </label>
+                                <label class="relative">
+                                    <input type="radio" name="property_type" value="commercial" class="peer sr-only">
+                                    <div class="p-4 rounded-lg border border-slate-200 bg-white text-center cursor-pointer hover:bg-slate-50 peer-checked:border-indigo-500 peer-checked:ring-1 peer-checked:ring-indigo-500 peer-checked:bg-indigo-50 transition-all">
+                                        <i class="fa-solid fa-briefcase mb-2 text-slate-400 peer-checked:text-indigo-600 block"></i>
+                                        Commercial
+                                    </div>
+                                </label>
+                            </div>
                         </div>
                         
-                        <div id="step-3">
-                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 3: What is your approximate budget?</h4>
-                            <select id="budget_range" name="budget_range" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition">
-                                <option value="" disabled selected>Please select a budget range</option>
-                                <option value="under_5k">Under £5,000</option>
-                                <option value="5k_8k">£5,000 - £8,000</option>
-                                <option value="8k_12k">£8,000 - £12,000</option>
-                                <option value="12k_20k">£12,000 - £20,000</option>
-                                <option value="over_20k">£20,000+</option>
-                                <option value="not_sure">I'm not sure / Just looking for a quote</option>
-                            </select>
+                        <!-- Step 3 -->
+                        <div id="step-3" class="border-b border-slate-100 pb-8">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="bg-indigo-100 text-indigo-700 font-bold w-8 h-8 rounded-full flex items-center justify-center text-sm">3</div>
+                                <h4 class="text-xl font-bold text-slate-800">Budget Range</h4>
+                            </div>
+                            <div class="ml-11">
+                                <select id="budget_range" name="budget_range" required class="w-full px-4 py-3 bg-slate-50 border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition">
+                                    <option value="" disabled selected>Select approximate budget</option>
+                                    <option value="under_5k">Under £5,000</option>
+                                    <option value="5k_8k">£5,000 - £8,000</option>
+                                    <option value="8k_12k">£8,000 - £12,000</option>
+                                    <option value="12k_20k">£12,000 - £20,000</option>
+                                    <option value="over_20k">£20,000+</option>
+                                    <option value="not_sure">I'm not sure / Just researching</option>
+                                </select>
+                            </div>
                         </div>
 
+                        <!-- Step 4 -->
                         <div id="step-4">
-                            <h4 class="text-xl font-bold mb-4 text-slate-800">Step 4: Your Contact Details</h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="bg-indigo-100 text-indigo-700 font-bold w-8 h-8 rounded-full flex items-center justify-center text-sm">4</div>
+                                <h4 class="text-xl font-bold text-slate-800">Test Contact Data</h4>
+                            </div>
+                            <p class="text-sm text-slate-500 mb-4 ml-11">Enter your details to trigger the webhook.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-11">
                                 <div>
-                                    <label for="first_name" class="block text-sm font-semibold text-slate-700">First Name</label>
-                                    <input type="text" id="first_name" name="first_name" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
+                                    <label for="first_name" class="block text-sm font-semibold text-slate-700 mb-1">First Name</label>
+                                    <input type="text" id="first_name" name="first_name" required class="w-full px-4 py-3 bg-slate-50 border-slate-200 rounded-lg focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none transition">
                                 </div>
                                 <div>
-                                    <label for="phone_number" class="block text-sm font-semibold text-slate-700">Phone Number</label>
-                                    <input type="tel" id="phone_number" name="phone_number" class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg" placeholder="e.g., 07123 456789">
+                                    <label for="phone_number" class="block text-sm font-semibold text-slate-700 mb-1">Phone Number</label>
+                                    <input type="tel" id="phone_number" name="phone_number" class="w-full px-4 py-3 bg-slate-50 border-slate-200 rounded-lg focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none transition" placeholder="e.g., 07123 456789">
                                 </div>
-                            </div>
-                            <div class="mt-6">
-                                <label for="email" class="block text-sm font-semibold text-slate-700">E-mail</label>
-                                <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
-                            </div>
-                             <div class="mt-6">
-                                <label for="post_code" class="block text-sm font-semibold text-slate-700">Post Code</label>
-                                <input type="text" id="post_code" name="post_code" required class="mt-1 block w-full px-4 py-3 bg-white border-slate-200 rounded-lg">
+                                <div>
+                                    <label for="email" class="block text-sm font-semibold text-slate-700 mb-1">E-mail</label>
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-slate-50 border-slate-200 rounded-lg focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none transition">
+                                </div>
+                                <div>
+                                    <label for="post_code" class="block text-sm font-semibold text-slate-700 mb-1">Post Code</label>
+                                    <input type="text" id="post_code" name="post_code" required class="w-full px-4 py-3 bg-slate-50 border-slate-200 rounded-lg focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none transition">
+                                </div>
                             </div>
                         </div>
 
-                        <button type="submit" id="submit-button" class="w-full bg-indigo-600 text-white font-bold py-4 px-6 rounded-lg hover:bg-indigo-700 text-lg transition-colors duration-300">
-                            Request My Free Quote
+                        <button type="submit" id="submit-button" class="w-full bg-indigo-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-indigo-700 text-lg transition-all duration-300 shadow-lg shadow-indigo-600/20 mt-4 transform hover:-translate-y-1">
+                            Run Demo Workflow <i class="fa-solid fa-rocket ml-2"></i>
                         </button>
                     </form>
-                    <div id="success-message" class="hidden mt-6 p-4 bg-green-100 text-green-800 border border-green-200 rounded-lg text-center">
-                        <p class="font-semibold">Thank you!</p>
-                        <p>Your quote request has been sent successfully. Our team will be in touch shortly.</p>
+
+                    <!-- Success Message -->
+                    <div id="success-message" class="hidden mt-6 p-8 bg-green-50 text-green-800 border border-green-200 rounded-2xl text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-check text-2xl text-green-600"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">Data Sent Successfully!</h4>
+                        <p class="text-lg mb-4">The webhook has been triggered.</p>
+                        <p class="text-sm text-green-700">
+                            If this were your real site, you would have just received a text message notification and the client would have received an automated email quote.
+                        </p>
+                        <button onclick="location.reload()" class="mt-6 text-green-700 font-semibold hover:underline">Reset Demo</button>
                     </div>
                 </div>
             </div>
@@ -124,9 +246,14 @@
         
     </main>
 
-    <footer class="bg-slate-900 text-slate-400 py-8">
+    <footer class="bg-slate-900 text-slate-400 py-12">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 RoofFlow AI. All rights reserved.</p>
+            <div class="flex justify-center items-center gap-2 mb-4">
+                <i class="fa-solid fa-robot text-indigo-500"></i>
+                <span class="font-bold text-white text-lg">RoofFlow AI</span>
+            </div>
+            <p class="text-sm mb-6">Empowering Manchester's Trade Businesses with Intelligent Automation.</p>
+            <p class="text-xs opacity-50">&copy; 2025 RoofFlow AI. All rights reserved.</p>
         </div>
     </footer>
 
@@ -134,16 +261,22 @@
         const form = document.getElementById('quote-request-form');
         const successMessage = document.getElementById('success-message');
         const submitButton = document.getElementById('submit-button');
+        
+        // YOUR WEBHOOK URL PRESERVED
         const webhookUrl = 'https://primary-production-58a3.up.railway.app/webhook/02974baa-98ae-4ba5-8ef5-787a5bcbe95e';
 
         form.addEventListener('submit', function(event) {
             event.preventDefault();
+            
+            // Visual feedback during submission
+            const originalBtnText = submitButton.innerHTML;
             submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
+            submitButton.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Connecting to n8n...';
             
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
 
+            // UK Phone formatting logic preserved
             if (data.phone_number && data.phone_number.startsWith('0')) {
                 data.phone_number = '+44' + data.phone_number.substring(1);
             }
@@ -161,27 +294,16 @@
                 console.log('Success:', data);
                 form.classList.add('hidden');
                 successMessage.classList.remove('hidden');
+                // Scroll to success message for better mobile UX
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             })
             .catch((error) => {
                 console.error('Error:', error);
-                alert('An error occurred. Please try again.');
+                alert('Demo Error: Could not connect to webhook. Please try again.');
                 submitButton.disabled = false;
-                submitButton.textContent = 'Request My Free Quote';
+                submitButton.innerHTML = originalBtnText;
             });
         });
-        
-        document.querySelectorAll('input[type="radio"]').forEach(radio => {
-            radio.addEventListener('change', (event) => {
-                document.querySelectorAll(`input[name="${event.target.name}"]`).forEach(sibling => {
-                    sibling.parentElement.classList.remove('ring-2', 'ring-indigo-500');
-                });
-                event.target.parentElement.classList.add('ring-2', 'ring-indigo-500');
-            });
-        });
-
     </script>
 </body>
 </html>
-
-
-
