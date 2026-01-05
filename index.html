@@ -546,8 +546,8 @@
                 div.className = `flex ${isBot ? 'justify-start' : 'justify-end'}`;
                 const bubble = document.createElement('div');
                 bubble.className = `max-w-[75%] rounded-2xl px-4 py-2 text-sm ${isBot
-                        ? 'bg-white border border-gray-200 text-gray-800 rounded-tl-none shadow-sm'
-                        : 'bg-blue-600 text-white rounded-tr-none shadow-sm'
+                    ? 'bg-white border border-gray-200 text-gray-800 rounded-tl-none shadow-sm'
+                    : 'bg-blue-600 text-white rounded-tr-none shadow-sm'
                     }`;
                 bubble.textContent = text;
                 div.appendChild(bubble);
@@ -655,10 +655,13 @@
                 const messages = [
                     {
                         role: 'system',
-                        content: `You are a helpful and professional AI assistant for RoofFlow AI. 
-                    Your goal is to answer questions about roofing services (sales automation, lead response) and general roofing inquiries.
-                    Keep responses concise (under 50 words preferably) and friendly.
-                    Current User Name: ${STATE.lead.name}`
+                        content: `You are a specialized B2B AI Assistant for RoofFlow AI, catering to roofing business owners in the UK.
+                Your ONE Goal: > Educate users about the "Speed to Lead" system. Explain how it instantly engages new leads via AI (SMS/email) to maximize conversion rates and secure more bookings.
+                Strict Guidelines:
+                Focus ONLY on AI & Automation: Discuss 24/7 lead qualification, missed call text-back, and automated follow-ups.
+                Negative Constraint: You DO NOT provide physical roofing services (repairs, installations). If asked about fixing a leak, clarify that you provide the software for roofing companies, not the labor.
+                Tone: Professional, concise (under 50 words), and results-oriented.
+                Current User Name: ${STATE.lead.name}`
                     },
                     ...STATE.messageHistory
                 ];
